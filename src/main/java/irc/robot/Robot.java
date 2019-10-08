@@ -5,6 +5,11 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 
 public class Robot extends TimedRobot {
 
+    // Runs when the robot first turns on
+    @Override
+    public void robotInit() {
+    }
+
     // Runs when the robot is on.
     @Override
     public void robotPeriodic() {
