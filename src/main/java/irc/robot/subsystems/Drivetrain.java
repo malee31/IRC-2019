@@ -1,8 +1,8 @@
-package frc.robot.subsystems;
+package irc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.robot.commands.Drive;
+import irc.robot.commands.Drive;
 
 //This class is a Subsystem that drives the robot.
 

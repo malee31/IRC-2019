@@ -1,21 +1,17 @@
-package frc.robot;
+package irc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import frc.robot.subsystems.Drivetrain;
+import irc.robot.subsystems.Drivetrain;
 
 public class Robot extends TimedRobot {
 
-    private OI oi;
     private Drivetrain drivetrain;
 
     // Runs once when the robot starts up.
     @Override
     public void robotInit() {
-
-        oi = OI.getInstance();
         drivetrain = Drivetrain.getInstance();
-
     }
 
     // Runs every tick when the robot is on. It does not matter which mode the robot is in (autonomous, teleoperated, etc.)
