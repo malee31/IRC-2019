@@ -8,6 +8,7 @@ public class Robot extends TimedRobot {
     // Runs when the robot first turns on
     @Override
     public void robotInit() {
+
     }
 
     // Runs when the robot is on.
