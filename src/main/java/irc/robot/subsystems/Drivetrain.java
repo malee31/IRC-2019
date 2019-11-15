@@ -20,4 +20,10 @@ public class Drivetrain extends Subsystem
         }
         return instance;
     }
+
+    @Override
+    private void initDefaultCommand
+    {
+        setDefaultCommand(new Drive());
+    }
 }
