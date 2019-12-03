@@ -35,13 +35,6 @@ public class OI
 		return rightJoy.getY();
 	}
 
-	// 20 millisecond loop or 500 times a second lol
-	public void execute()
-	{
-		// Drivetrain.setSpeeduses OI values from Joysticks/controllers
-		drivetrain.setSpeed(oi.getLeftJoy(), oi.getRightJoy());
-	}
-
 //	public double getX()
 //	{
 //		return xboxController.getX();

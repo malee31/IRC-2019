@@ -1,9 +1,10 @@
 package irc.robot.commands;
 
+import edu.wpi.first.wpilibj.command.Command;
 import irc.robot.OI;
 import irc.robot.subsystems.Arm;
 
-public class Lift
+public class Lift extends Command
 {
     private OI oi;
     private Arm arm;
