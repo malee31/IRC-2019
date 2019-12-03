@@ -6,11 +6,11 @@ import irc.robot.subsystems.Drivetrain;
 
 public class Drive extends Command
 {
-    private Oi oi;
+    private OI oi;
     private Drivetrain drivetrain;
     public Drive()
     {
-        oi = Oi.getInstance();
+        oi = OI.getInstance();
         drivetrain = Drivetrain.getInstance();
         requires(drivetrain);
     }
@@ -18,5 +18,12 @@ public class Drive extends Command
     public void execute()
     {
         
+    }
+
+    //Never end command
+    @Override
+    protected boolean isFinished()
+    {
+        return false;
     }
 }

@@ -2,23 +2,30 @@ package irc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import irc.robot.commands.Drive;
 
 public class Drivetrain extends Subsystem
 {
     private static Drivetrain instance;
-    private VictorSP leftMasterVictor, rightMasterVictor;
-    public Drivetrain()
+    private static VictorSP leftMasterVictor, rightMasterVictor;
+    private Drivetrain()
     {
         leftMasterVictor=new VictorSP(7);
         rightMasterVictor=new VictorSP(6);
     }
-    private static Drivetrain getInstance()
+    public static Drivetrain getInstance()
     {
         if(instance==null)
         {
             instance=new Drivetrain();
         }
         return instance;
+    }
+
+    public void setSpeed (double left, double right)
+    {
+        leftMasterVictor.setSpeed(left);
+        rightMasterVictor.setSpeed(right);
     }
 
     @Override
