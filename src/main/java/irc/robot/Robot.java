@@ -5,6 +5,10 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import irc.robot.subsystems.Arm;
 import irc.robot.subsystems.Drivetrain;
 
+//https://wpilib.screenstepslive.com/s/currentCS/m/java/l/599745-scheduling-commands
+//https://wpilib.screenstepslive.com/s/currentCS/m/cpp/l/241902-creating-simple-commands
+//https://wpilib.screenstepslive.com/s/currentCS/m/java/l/599739-running-commands-on-joystick-input
+
 public class Robot extends TimedRobot
 {
     Drivetrain drivetrain;
@@ -29,7 +33,7 @@ public class Robot extends TimedRobot
     @Override
     public void autonomousInit()
     {
-        
+
     }
 
     // Runs during autonomous.
