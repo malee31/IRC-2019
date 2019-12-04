@@ -2,18 +2,22 @@ package irc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import irc.robot.subsystems.Arm;
 import irc.robot.subsystems.Drivetrain;
 
 public class Robot extends TimedRobot
 {
     Drivetrain drivetrain;
+    Arm arm;
     // Runs when the robot first turns on
     @Override
     public void robotInit()
     {
         drivetrain = Drivetrain.getInstance();
+        arm = Arm.getInstance();
     }
 
+//    Periodics run every 20ms at 500 times/s
     // Runs when the robot is on.
     @Override
     public void robotPeriodic()
@@ -25,7 +29,7 @@ public class Robot extends TimedRobot
     @Override
     public void autonomousInit()
     {
-
+        
     }
 
     // Runs during autonomous.

@@ -14,6 +14,7 @@ public class OI
 		leftJoy = new Joystick(1);
 		rightJoy = new Joystick(2);
 //		xboxController = new XboxController(1) //port number
+//		Joysticks have buttons too
 	}
 
 	public static OI getInstance()
