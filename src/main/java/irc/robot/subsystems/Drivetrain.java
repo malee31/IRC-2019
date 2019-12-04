@@ -10,8 +10,8 @@ public class Drivetrain extends Subsystem
     private static VictorSP leftMasterVictor, rightMasterVictor;
     private Drivetrain()
     {
-        leftMasterVictor=new VictorSP(7);
-        rightMasterVictor=new VictorSP(6);
+        leftMasterVictor=new VictorSP(8);
+        rightMasterVictor=new VictorSP(9);
     }
     public static Drivetrain getInstance()
     {
@@ -29,7 +29,7 @@ public class Drivetrain extends Subsystem
     }
 
     @Override
-    private void initDefaultCommand
+    protected void initDefaultCommand()
     {
         setDefaultCommand(new Drive());
     }

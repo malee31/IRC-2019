@@ -8,7 +8,7 @@ public class Lift extends Command
 {
     private OI oi;
     private Arm arm;
-    public Drive()
+    public Lift()
     {
         oi = OI.getInstance();
         arm = Arm.getInstance();

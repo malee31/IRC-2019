@@ -8,7 +8,7 @@ public class Arm extends Subsystem
 {
     private static Arm instance;
     private VictorSP armMasterVictor;
-    private Arm
+    private Arm()
     {
         //channel needs config
         armMasterVictor=new VictorSP(0);
@@ -28,7 +28,7 @@ public class Arm extends Subsystem
     }
 
     @Override
-    private void initDefaultCommand()
+    protected void initDefaultCommand()
     {
         setDefaultCommand(new Lift());
     }
