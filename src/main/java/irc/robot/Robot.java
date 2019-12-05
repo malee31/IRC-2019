@@ -1,7 +1,9 @@
 package irc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import irc.robot.commands.Auto;
 import irc.robot.subsystems.Arm;
 import irc.robot.subsystems.Drivetrain;
 
@@ -30,6 +32,7 @@ public class Robot extends TimedRobot
     }
 
     // Runs once when autonomous starts.
+    Command auto = new Auto(6);
     @Override
     public void autonomousInit()
     {
