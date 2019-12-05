@@ -17,7 +17,7 @@ public class Lift extends Command
 
     public void execute()
     {
-//        arm.setSpeed(/*value*/)
+        arm.setSpeed(oi.getArmSpeed());
     }
 
     //Never end command

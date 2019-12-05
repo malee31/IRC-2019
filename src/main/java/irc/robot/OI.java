@@ -1,6 +1,7 @@
 package irc.robot;
 
 //import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 
 public class OI
@@ -48,8 +49,26 @@ public class OI
 
 	public double getComplementSideways()
 	{
-		return (1-getSideways())%1.0;
+	    if(getSideways()<0)
+        {
+            return (1-Math.abs(getSideways()))*-1;
+        }
+		return (1-Math.abs(getSideways()));
 	}
+
+	public double getArmSpeed()
+    {
+        double speed=0.0;
+        if(xboxController.getBumper(GenericHID.Hand.kLeft))
+        {
+            speed+=1;
+        }
+        if(xboxController.getBumper(GenericHID.Hand.kRight))
+        {
+            speed-=1;
+        }
+        return speed;
+    }
 //	XBoxController also has getA() getB() getXButton() getYButton() getBumperButton() getBackButton()
 //	every button's on Released and Pressed and some triggeraxis
 //	https://first.wpi.edu/FRC/roborio/beta/docs/java/edu/wpi/first/wpilibj/XboxController.html
