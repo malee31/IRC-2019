@@ -1,19 +1,19 @@
 package irc.robot;
 
-import edu.wpi.first.wpilibj.Joystick;
+//import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 
 public class OI
 {
 	private static OI instance;
-	private Joystick leftJoy, rightJoy;
-//	private XboxController xboxController;
+//	private Joystick leftJoy, rightJoy;
+	private XboxController xboxController;
 
 	private OI()
 	{
-		leftJoy = new Joystick(1);
-		rightJoy = new Joystick(2);
-//		xboxController = new XboxController(1) //port number
+//		leftJoy = new Joystick(1);
+//		rightJoy = new Joystick(2);
+		xboxController = new XboxController(1); //port number
 //		Joysticks have buttons too
 	}
 
@@ -26,25 +26,30 @@ public class OI
         return instance;
 	}
 
-	public double getLeftJoy()
-	{
-		return leftJoy.getY();
-	}
-
-	public double getRightJoy()
-	{
-		return rightJoy.getY();
-	}
-
-//	public double getX()
+//	public double getLeftJoy()
 //	{
-//		return xboxController.getX();
+//		return leftJoy.getY();
 //	}
 //
-//	public double getY()
+//	public double getRightJoy()
 //	{
-//		return xboxController.getY();
+//		return rightJoy.getY();
 //	}
+
+	public double getForward()
+	{
+		return xboxController.getY();
+	}
+
+	public double getSideways()
+	{
+		return xboxController.getX();
+	}
+
+	public double getComplementSideways()
+	{
+		return (1-getSideways())%1.0;
+	}
 //	XBoxController also has getA() getB() getXButton() getYButton() getBumperButton() getBackButton()
 //	every button's on Released and Pressed and some triggeraxis
 //	https://first.wpi.edu/FRC/roborio/beta/docs/java/edu/wpi/first/wpilibj/XboxController.html

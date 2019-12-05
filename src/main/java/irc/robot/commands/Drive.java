@@ -17,7 +17,7 @@ public class Drive extends Command
 
     public void execute()
     {
-        drivetrain.setSpeed(oi.getLeftJoy(), oi.getRightJoy());
+        drivetrain.setSpeed(oi.getForward()*(oi.getSideways()), oi.getForward()*(oi.getComplementSideways()));
     }
 
     //Never end command
