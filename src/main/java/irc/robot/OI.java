@@ -40,6 +40,15 @@ public class OI
 //	}
     private final float scaleFactor = -1.0;
     private boolean toggleInvert = false;
+
+    public void inverter()
+    {
+        if(xboxController.getAButtonPressed())
+        {
+            toggleInvert=!toggleInvert;
+        }
+    }
+
     public double getLeft()
     {
         double returnee=xboxController.getY(GenericHID.Hand.kLeft)*scaleFactor;
@@ -62,7 +71,7 @@ public class OI
 
 	// public double getForward()
 	// {
- //        return xboxController.getY()*scaleFactor;
+//            return xboxController.getY()*scaleFactor;
 	// }
 
 	// public double getSideways()
