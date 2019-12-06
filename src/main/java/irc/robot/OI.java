@@ -38,40 +38,46 @@ public class OI
 //	{
 //		return rightJoy.getY();
 //	}
-
+    private final float scaleFactor = -1.0;
+    private boolean toggleInvert = false;
     public double getLeft()
     {
-        return xboxController.getX(GenericHID.Hand.kLeft);
+        double returnee=xboxController.getY(GenericHID.Hand.kLeft)*scaleFactor;
+        if(toggleInvert)
+        {
+            return returnee*-1;
+        }
+        return returnee;
     }
 
     public double getRight()
     {
-        return xboxController.getX(GenericHID.Hand.kRight);
+        double returnee=xboxController.getY(GenericHID.Hand.kLeft)*scaleFactor;
+        if(toggleInvert)
+        {
+            return returnee*-1;
+        }
+        return returnee;
     }
 
-    double maxVal=0.01;
-    double minVal=-0.01;
-	public double getForward()
-	{
-        maxVal=Math.max(maxVal, getForward());
-        minVal=Math.min(minVal, getForward());
-        System.out.println(maxVal +""+ minVal);
-        return xboxController.getY();
-	}
+	// public double getForward()
+	// {
+ //        return xboxController.getY()*scaleFactor;
+	// }
 
-	public double getSideways()
-	{
-		return xboxController.getX();
-	}
+	// public double getSideways()
+	// {
+	// 	return xboxController.getX()*-1;
+	// }
 
-	public double getComplementSideways()
-	{
-	    if(getSideways()<0)
-        {
-            return (1-Math.abs(getSideways()))*-1;
-        }
-		return (1-Math.abs(getSideways()));
-	}
+	// public double getComplementSideways()
+	// {
+	//     if(getSideways()<0)
+ //        {
+ //            return (1-Math.abs(getSideways()))*-1;
+ //        }
+	// 	return (1-Math.abs(getSideways()));
+	// }
 
 	public double getArmSpeed()
     {
