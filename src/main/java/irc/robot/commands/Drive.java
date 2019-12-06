@@ -17,6 +17,12 @@ public class Drive extends Command
 
     public void execute()
     {
+        System.out.print("Forward:"+oi.getForward());
+        System.out.print("Left:"+oi.getForward()*(oi.getSideways()));
+        System.out.print("Right: "+oi.getForward()*(oi.getComplementSideways()));
+        System.out.print("Y val: : "+oi.getSideways());
+        System.out.print("Point dir: : "+oi.getTrigger());
+        System.out.print("Forward:"+oi.getForward());
         drivetrain.setSpeed(oi.getForward()*(oi.getSideways()), oi.getForward()*(oi.getComplementSideways()));
     }
 

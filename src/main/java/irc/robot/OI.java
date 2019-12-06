@@ -4,6 +4,8 @@ package irc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 
+import javax.sql.XAConnectionBuilder;
+
 public class OI
 {
 	private static OI instance;
@@ -36,6 +38,11 @@ public class OI
 //	{
 //		return rightJoy.getY();
 //	}
+
+    public double getTrigger()
+    {
+        return (double)(xboxController.getTriggerAxis(GenericHID.Hand.kRight));
+    }
 
 	public double getForward()
 	{

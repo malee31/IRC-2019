@@ -32,7 +32,7 @@ public class Robot extends TimedRobot
     }
 
     // Runs once when autonomous starts.
-    Command auto = new Auto(6);
+    Command auto = new Auto(3);
     @Override
     public void autonomousInit()
     {
