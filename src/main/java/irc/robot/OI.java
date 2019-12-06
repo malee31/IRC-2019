@@ -38,7 +38,7 @@ public class OI
 //	{
 //		return rightJoy.getY();
 //	}
-    private final float scaleFactor = -1.0;
+    private final float scaleFactor = (float) -1.0;
     private boolean toggleInvert = false;
 
     public void inverter()
