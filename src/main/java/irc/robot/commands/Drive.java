@@ -26,7 +26,7 @@ public class Drive extends Command
         System.out.println(" Forward:"+oi.getForward());
 
         drivetrain.setSpeed(oi.getLeft(), oi.getRight());
-        drivetrain.setSpeed(oi.getForward()*(oi.getSideways()), oi.getForward()*(oi.getComplementSideways()));
+//        drivetrain.setSpeed(oi.getForward()*(oi.getSideways()), oi.getForward()*(oi.getComplementSideways()));
     }
 
     //Never end command

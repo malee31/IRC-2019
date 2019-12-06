@@ -44,17 +44,18 @@ public class OI
         return xboxController.getX(GenericHID.Hand.kLeft);
     }
 
-    public double getLeft()
+    public double getRight()
     {
         return xboxController.getX(GenericHID.Hand.kRight);
     }
-    
+
     double maxVal=0.01;
     double minVal=-0.01;
 	public double getForward()
 	{
         maxVal=Math.max(maxVal, getForward());
         minVal=Math.min(minVal, getForward());
+        System.out.println(maxVal +""+ minVal);
         return xboxController.getY();
 	}
 
