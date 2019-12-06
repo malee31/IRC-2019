@@ -39,14 +39,23 @@ public class OI
 //		return rightJoy.getY();
 //	}
 
-    public double getTrigger()
+    public double getLeft()
     {
-        return (double)(xboxController.getTriggerAxis(GenericHID.Hand.kRight));
+        return xboxController.getX(GenericHID.Hand.kLeft);
     }
 
+    public double getLeft()
+    {
+        return xboxController.getX(GenericHID.Hand.kRight);
+    }
+    
+    double maxVal=0.01;
+    double minVal=-0.01;
 	public double getForward()
 	{
-		return xboxController.getY();
+        maxVal=Math.max(maxVal, getForward());
+        minVal=Math.min(minVal, getForward());
+        return xboxController.getY();
 	}
 
 	public double getSideways()

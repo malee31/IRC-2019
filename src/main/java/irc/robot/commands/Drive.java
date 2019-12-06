@@ -15,14 +15,17 @@ public class Drive extends Command
         requires(drivetrain);
     }
 
+    double maxVal=0;
+    double minVal=0;
     public void execute()
     {
-        System.out.print("Forward:"+oi.getForward());
-        System.out.print("Left:"+oi.getForward()*(oi.getSideways()));
-        System.out.print("Right: "+oi.getForward()*(oi.getComplementSideways()));
-        System.out.print("Y val: : "+oi.getSideways());
-        System.out.print("Point dir: : "+oi.getTrigger());
-        System.out.print("Forward:"+oi.getForward());
+        System.out.print(" Forward:"+oi.getForward());
+        System.out.print(" Left:"+oi.getForward()*(oi.getSideways()));
+        System.out.print(" Right: "+oi.getForward()*(oi.getComplementSideways()));
+        System.out.print(" Y val: : "+oi.getSideways());
+        System.out.println(" Forward:"+oi.getForward());
+
+        drivetrain.setSpeed(oi.getLeft(), oi.getRight());
         drivetrain.setSpeed(oi.getForward()*(oi.getSideways()), oi.getForward()*(oi.getComplementSideways()));
     }
 
