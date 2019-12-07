@@ -43,9 +43,25 @@ public class OI
 
     public void inverter()
     {
-        if(xboxController.getAButtonPressed())
+        if(xboxController.getBButtonPressed())
         {
             toggleInvert=!toggleInvert;
+        }
+    }
+
+    public double[] postDriveTriggers()
+    {
+        if(xboxController.getAButton())
+        {
+            return new double[]{1, 1};
+        }
+        else if(xboxController.getXButton())
+        {
+            return new double[]{-1, -1};
+        }
+        else
+        {
+            return new double[0];
         }
     }
 
@@ -61,7 +77,7 @@ public class OI
 
     public double getRight()
     {
-        double returnee=xboxController.getY(GenericHID.Hand.kLeft)*scaleFactor;
+        double returnee=xboxController.getY(GenericHID.Hand.kRight)*scaleFactor;
         if(toggleInvert)
         {
             return returnee*-1;

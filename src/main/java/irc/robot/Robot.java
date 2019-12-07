@@ -36,7 +36,7 @@ public class Robot extends TimedRobot
     @Override
     public void autonomousInit()
     {
-        Scheduler.getInstance().add(new Auto(6));
+        Scheduler.getInstance().add(new Auto(1));
     }
 
     // Runs during autonomous.

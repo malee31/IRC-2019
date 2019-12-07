@@ -21,6 +21,11 @@ public class Drive extends Command
     {
         oi.inverter();
         drivetrain.setSpeed(oi.getLeft(), oi.getRight());
+        double[] driveTriggers=oi.postDriveTriggers();
+        if(driveTriggers.length>=2)
+        {
+            drivetrain.setSpeed(driveTriggers[0], driveTriggers[1]);
+        }
 //        drivetrain.setSpeed(oi.getForward()*(oi.getSideways()), oi.getForward()*(oi.getComplementSideways()));
     }
 

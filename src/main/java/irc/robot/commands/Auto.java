@@ -6,7 +6,7 @@ import irc.robot.subsystems.Drivetrain;
 public class Auto extends TimedCommand
 {
     Drivetrain drivetrain;
-    public Auto(int time)
+    public Auto(double time)
     {
         super(time);
         drivetrain = Drivetrain.getInstance();
